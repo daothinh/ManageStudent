@@ -1,0 +1,26 @@
+Đề Mẫu: QUẢN LÝ SINH VIÊN THEO LỚP
+
+Thông tin về Sinh viên gồm các thuộc tính (mã Sinh viên, tên Sinh viên, năm sinh, quê quán, năm học) – trong đó Năm học có thể là: Năm nhất, năm hai, năm ba, năm bốn. Mã sinh viên là một số nguyên tự động tăng.
+
+Thông tin về Lớp (mã Lớp, Tên lớp, mô tả), mã lớp là một số nguyên tự động tăng.
+
+Mỗi kỳ học, sinh viên sẽ đăng ký vào các lớp để học để tạo thành bảng Sinh viên – lớp, một sinh viên có thể học
+nhiều lớp, một lớp có nhiều sinh viên đăng ký học. Thông tin bao gồm mã Sinh viên, mã Lớp, kỳ học, số tín chỉ.
+
+Tự xác định các lớp cho phù hợp và viết chương trình có giao diện (có thể dùng kéo thả) thực hiện các chức năng
+sau:
+
+1. Thiết kế các giao diện theo yêu cầu (1đ)
+
+2. Xây dựng các lớp Model và DatabaseHelper cho các yêu cầu trên (2đ)
+
+3. Nhập thêm Sinh viên vào CSDL SQLite. Hiển thị ra Bảng Danh sách các Sinh viên đang có trong CSDL (1đ)
+
+4. Nhập thêm Lớp vào CSDL SQLite. Hiển thị ra Bảng Danh sách Lớp đang có trong CSDL(1đ)
+
+5. Thêm sinh viên vào lớp và lưu dữ liệu trong CSDL SQLite. Hiển thị ra Bảng danh sách Sinh viên đăng ký theo lớp (2đ)
+
+6. Liệt kê các sinh viên có tên là Nam đang học năm 2 (1đ)
+
+7. Thống kê số sinh viên đăng ký theo Lớp học, sắp xếp theo thứ tự sinh viên giảm dần
+(2đ)

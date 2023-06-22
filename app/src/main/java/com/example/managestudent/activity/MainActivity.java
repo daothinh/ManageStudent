@@ -38,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        listCourse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, CourseListActivity.class));
+            }
+        });
+
     }
 
 

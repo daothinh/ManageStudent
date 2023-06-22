@@ -68,7 +68,6 @@
         android:id="@+id/updateCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Edit"
         app:layout_constraintEnd_toEndOf="@+id/addCourse"
         app:layout_constraintStart_toStartOf="@+id/addCourse"
         app:layout_constraintTop_toBottomOf="@+id/addCourse" />
@@ -77,7 +76,7 @@
         android:id="@+id/deleleCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Delete"
+        android:text=""
         app:layout_constraintEnd_toEndOf="@+id/updateCourse"
         app:layout_constraintStart_toStartOf="@+id/updateCourse"
         app:layout_constraintTop_toBottomOf="@+id/updateCourse" />

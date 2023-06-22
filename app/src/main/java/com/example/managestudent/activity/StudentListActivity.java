@@ -18,7 +18,6 @@ import com.example.managestudent.adapter.StudentListAdapter;
 import com.example.managestudent.database.DatabaseHelper;
 import com.example.managestudent.model.Student;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class StudentListActivity extends AppCompatActivity {
@@ -39,7 +38,7 @@ public class StudentListActivity extends AppCompatActivity {
 
         Button addStudent = findViewById(R.id.addStudent);
         Button updateStudent = findViewById(R.id.updateStudent);
-        Button deleteStudent = findViewById(R.id.deleleStudent);
+        Button queryCustom = findViewById(R.id.queryCustom);
         Button viewStudent = findViewById(R.id.viewStudent);
 
         TextView idStudent = findViewById(R.id.idStudent);
@@ -83,6 +82,23 @@ public class StudentListActivity extends AppCompatActivity {
             recyclerView.setLayoutManager(new LinearLayoutManager(StudentListActivity.this));
             displayData();
         });
+
+        //Query Custom
+        queryCustom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                id = new ArrayList<>();
+                name = new ArrayList<>();
+                dob = new ArrayList<>();
+                address = new ArrayList<>();
+                courseYear = new ArrayList<>();
+
+                studentListAdapter = new StudentListAdapter(StudentListActivity.this, id, name, dob, address, courseYear);
+                recyclerView.setAdapter(studentListAdapter);
+                recyclerView.setLayoutManager(new LinearLayoutManager(StudentListActivity.this));
+                displayDataCustom();
+            }
+        });
     }
 
     private void displayData() {
@@ -94,6 +110,20 @@ public class StudentListActivity extends AppCompatActivity {
                 id.add(cursor.getString(0));
                 name.add(cursor.getString(1));
 //                dob.add(cursor.getString(2));
+                address.add(cursor.getString(2));
+                courseYear.add(cursor.getString(3));
+            }
+        }
+    }
+
+    private void displayDataCustom(){
+        Cursor cursor = databaseHelper.getStudentCustom("John", "2");
+        if (cursor.getCount() == 0) {
+            Toast.makeText(this, "No data", Toast.LENGTH_SHORT).show();
+        } else {
+            while (cursor.moveToNext()) {
+                id.add(cursor.getString(0));
+                name.add(cursor.getString(1));
                 address.add(cursor.getString(2));
                 courseYear.add(cursor.getString(3));
             }

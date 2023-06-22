@@ -131,7 +131,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public Cursor getStudent(String name, String courseYear) {
+    public Cursor getStudentCustom(String name, String courseYear) {
         SQLiteDatabase db = this.getReadableDatabase();
         String sql = "SELECT * FROM " + StudentField.TABLE_NAME + " WHERE name LIKE '%" + name + "%' AND course_year = " + courseYear;
         Cursor cursor = db.rawQuery(sql, null);

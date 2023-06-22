@@ -79,7 +79,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(StudentField.ADDRESS, student.getAddress());
         values.put(StudentField.COURSE_YEAR, student.getCourseYear());
 
-        db.insert(StudentField.TABLE_NAME, null, values);
+//        db.insert(StudentField.TABLE_NAME, null, values);
 //        db.close();
 
         long result = db.insert(StudentField.TABLE_NAME, null, values);
@@ -98,8 +98,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(CourseField.TERM, course.getTerm());
         values.put(CourseField.CREDIT_UNIT, course.getCreditUnit());
         values.put(CourseField.DESCRIPTION, course.getDescription());
-        db.insert(CourseField.TABLE_NAME, null, values);
+//        db.insert(CourseField.TABLE_NAME, null, values);
 //        db.close();
+
 
         long result = db.insert(CourseField.TABLE_NAME, null, values);
         if (result == -1) {

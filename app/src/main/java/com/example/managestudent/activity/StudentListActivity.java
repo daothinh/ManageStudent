@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,6 +40,7 @@ public class StudentListActivity extends AppCompatActivity {
         Button addStudent = findViewById(R.id.addStudent);
         Button updateStudent = findViewById(R.id.updateStudent);
         Button deleteStudent = findViewById(R.id.deleleStudent);
+        Button viewStudent = findViewById(R.id.viewStudent);
 
         TextView idStudent = findViewById(R.id.idStudent);
         EditText nameStudent = findViewById(R.id.nameStudent);
@@ -51,30 +53,36 @@ public class StudentListActivity extends AppCompatActivity {
         //Add Student
         addStudent.setOnClickListener(v -> {
 
-            Student student = new Student(1, nameStudent.getText().toString(),
-                    dobStudent.getText().toString(), addrStudent.getText().toString(),
-                    Integer.parseInt(couYearStudent.getText().toString()));
-
-            Boolean checkAddStudent = databaseHelper.addStudent(student);
-
-            if (checkAddStudent == true) {
-                Toast.makeText(StudentListActivity.this, "Add student successfully", Toast.LENGTH_SHORT).show();
+            if (TextUtils.isEmpty(nameStudent.getText().toString()) || TextUtils.isEmpty(dobStudent.getText().toString())) {
+                Toast.makeText(StudentListActivity.this, "Please fill value", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(StudentListActivity.this, "Add student failed", Toast.LENGTH_SHORT).show();
+                Student student = new Student(1, nameStudent.getText().toString(),
+                        dobStudent.getText().toString(), addrStudent.getText().toString(),
+                        Integer.parseInt(couYearStudent.getText().toString()));
+
+                Boolean checkAddStudent = databaseHelper.addStudent(student);
+
+                if (checkAddStudent == true) {
+                    Toast.makeText(StudentListActivity.this, "Add student successfully", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(StudentListActivity.this, "Add student failed", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         //Show Student
-        id = new ArrayList<>();
-        name = new ArrayList<>();
-        dob = new ArrayList<>();
-        address = new ArrayList<>();
-        courseYear = new ArrayList<>();
+        viewStudent.setOnClickListener(v -> {
+            id = new ArrayList<>();
+            name = new ArrayList<>();
+            dob = new ArrayList<>();
+            address = new ArrayList<>();
+            courseYear = new ArrayList<>();
 
-        studentListAdapter = new StudentListAdapter(StudentListActivity.this, id, name, dob, address, courseYear);
-        recyclerView.setAdapter(studentListAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(StudentListActivity.this));
-        displayData();
+            studentListAdapter = new StudentListAdapter(StudentListActivity.this, id, name, dob, address, courseYear);
+            recyclerView.setAdapter(studentListAdapter);
+            recyclerView.setLayoutManager(new LinearLayoutManager(StudentListActivity.this));
+            displayData();
+        });
     }
 
     private void displayData() {

@@ -1,15 +1,16 @@
 package com.example.managestudent.model;
 
 public class Course {
+    private int idCourse;
     private String name;
-    private int idClass;
-    private int description;
     private int term;
     private int creditUnit;
+    private String description;
 
-    public Course(String name, int idClass, int description, int term, int creditUnit) {
+
+    public Course(int idCourse, String name, String description, int term, int creditUnit) {
+        this.idCourse = idCourse;
         this.name = name;
-        this.idClass = idClass;
         this.description = description;
         this.term = term;
         this.creditUnit = creditUnit;
@@ -19,11 +20,11 @@ public class Course {
         return name;
     }
 
-    public int getIdClass() {
-        return idClass;
+    public int getIdCourse() {
+        return idCourse;
     }
 
-    public int getDescription() {
+    public String getDescription() {
         return description;
     }
 
@@ -39,12 +40,8 @@ public class Course {
         this.name = name;
     }
 
-    public void setIdClass(int idClass) {
-        this.idClass = idClass;
-    }
-
-    public void setDescription(int description) {
-        this.description = description;
+    public void setIdCourse(int idCourse) {
+        this.idCourse = idCourse;
     }
 
     public void setTerm(int term) {
@@ -53,5 +50,9 @@ public class Course {
 
     public void setCreditUnit(int creditUnit) {
         this.creditUnit = creditUnit;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

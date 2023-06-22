@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.CourseListActivity">
+
+    <EditText
+        android:id="@+id/nameCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Name Course"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.139"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/courseUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Course Unit"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/nameCourse"
+        app:layout_constraintStart_toStartOf="@+id/nameCourse"
+        app:layout_constraintTop_toBottomOf="@+id/nameCourse" />
+
+    <EditText
+        android:id="@+id/term"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Semester"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/courseUnit"
+        app:layout_constraintStart_toStartOf="@+id/courseUnit"
+        app:layout_constraintTop_toBottomOf="@+id/courseUnit" />
+
+    <EditText
+        android:id="@+id/desCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Course Description"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/term"
+        app:layout_constraintStart_toStartOf="@+id/term"
+        app:layout_constraintTop_toBottomOf="@+id/term" />
+
+    <Button
+        android:id="@+id/addCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nameCourse"
+        app:layout_constraintTop_toTopOf="@+id/nameCourse" />
+
+    <Button
+        android:id="@+id/updateCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        app:layout_constraintEnd_toEndOf="@+id/addCourse"
+        app:layout_constraintStart_toStartOf="@+id/addCourse"
+        app:layout_constraintTop_toBottomOf="@+id/addCourse" />
+
+    <Button
+        android:id="@+id/deleleCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        app:layout_constraintEnd_toEndOf="@+id/updateCourse"
+        app:layout_constraintStart_toStartOf="@+id/updateCourse"
+        app:layout_constraintTop_toBottomOf="@+id/updateCourse" />
+
+    <Button
+        android:id="@+id/viewCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View"
+        app:layout_constraintEnd_toEndOf="@+id/deleleCourse"
+        app:layout_constraintStart_toStartOf="@+id/deleleCourse"
+        app:layout_constraintTop_toBottomOf="@+id/deleleCourse" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerCourse"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/desCourse" />
+</androidx.constraintlayout.widget.ConstraintLayout>

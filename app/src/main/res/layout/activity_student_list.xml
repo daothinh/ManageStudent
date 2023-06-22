@@ -10,8 +10,8 @@
         android:id="@+id/idStudent"
         android:layout_width="206dp"
         android:layout_height="21dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:textAlignment="viewStart"
@@ -98,13 +98,24 @@
         app:layout_constraintStart_toStartOf="@+id/updateStudent"
         app:layout_constraintTop_toBottomOf="@+id/updateStudent" />
 
+    <Button
+        android:id="@+id/viewStudent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View"
+        app:layout_constraintEnd_toEndOf="@+id/deleleStudent"
+        app:layout_constraintStart_toStartOf="@+id/deleleStudent"
+        app:layout_constraintTop_toBottomOf="@+id/deleleStudent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerStudent"
         android:layout_width="0dp"
-        android:layout_height="424dp"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/couYearStudent" />

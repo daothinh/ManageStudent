@@ -27,7 +27,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtIdStudent"
+                android:id="@+id/txtIdCourse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -45,13 +45,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name: "
+                android:text="Name Course: "
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtNameStudent"
+                android:id="@+id/txtNameCourse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -69,13 +69,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Address: "
+                android:text="Semester Course: "
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtAddressStudent"
+                android:id="@+id/txtTermCourse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -93,13 +93,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Course Year"
+                android:text="Course Unit: "
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtCourseYearStudent"
+                android:id="@+id/txtCourseUnit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -109,6 +109,4 @@
 
 
     </LinearLayout>
-
-
 </androidx.cardview.widget.CardView>

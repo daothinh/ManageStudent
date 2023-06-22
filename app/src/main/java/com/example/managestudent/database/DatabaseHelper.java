@@ -28,9 +28,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //Create Table
     @Override
     public void onCreate(SQLiteDatabase db) {
+
         String sqlCreateTableStudent = "CREATE TABLE " + TABLE_STUDENT +
                 " (id_student INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "name TEXT, " +
+                "dob TEXT, " +
                 "address TEXT, " +
                 "course_year INTEGER)";
 
@@ -68,17 +70,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addStudent(Student student) {
+    public Boolean addStudent(Student student) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
+
         values.put(StudentField.NAME, student.getName());
+        values.put(StudentField.DOB, student.getDob());
         values.put(StudentField.ADDRESS, student.getAddress());
         values.put(StudentField.COURSE_YEAR, student.getCourseYear());
+
         db.insert(StudentField.TABLE_NAME, null, values);
-        db.close();
+//        db.close();
+
+        long result = db.insert(StudentField.TABLE_NAME, null, values);
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
-    public void addCourse(Course course) {
+    public Boolean addCourse(Course course) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
@@ -87,7 +99,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(CourseField.CREDIT_UNIT, course.getCreditUnit());
         values.put(CourseField.DESCRIPTION, course.getDescription());
         db.insert(CourseField.TABLE_NAME, null, values);
-        db.close();
+//        db.close();
+
+        long result = db.insert(CourseField.TABLE_NAME, null, values);
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public Cursor getStudent() {

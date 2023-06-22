@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.StudentListActivity">
+
+    <TextView
+        android:id="@+id/idStudent"
+        android:layout_width="206dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="ID" />
+
+    <EditText
+        android:id="@+id/nameStudent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Name Student"
+        app:layout_constraintEnd_toEndOf="@+id/idStudent"
+        app:layout_constraintStart_toStartOf="@+id/idStudent"
+        app:layout_constraintTop_toBottomOf="@+id/idStudent" />
+
+    <EditText
+        android:id="@+id/dobStudent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Date of Birth"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/nameStudent"
+        app:layout_constraintStart_toStartOf="@+id/nameStudent"
+        app:layout_constraintTop_toBottomOf="@+id/nameStudent" />
+
+    <EditText
+        android:id="@+id/addrStudent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Address"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/dobStudent"
+        app:layout_constraintStart_toStartOf="@+id/dobStudent"
+        app:layout_constraintTop_toBottomOf="@+id/dobStudent" />
+
+    <EditText
+        android:id="@+id/couYearStudent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Course Year"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/addrStudent"
+        app:layout_constraintStart_toStartOf="@+id/addrStudent"
+        app:layout_constraintTop_toBottomOf="@+id/addrStudent" />
+
+    <Button
+        android:id="@+id/addStudent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.446"
+        app:layout_constraintStart_toEndOf="@+id/idStudent"
+        app:layout_constraintTop_toTopOf="@+id/idStudent" />
+
+    <Button
+        android:id="@+id/updateStudent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        app:layout_constraintEnd_toEndOf="@+id/addStudent"
+        app:layout_constraintStart_toStartOf="@+id/addStudent"
+        app:layout_constraintTop_toBottomOf="@+id/addStudent" />
+
+    <Button
+        android:id="@+id/deleleStudent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        app:layout_constraintEnd_toEndOf="@+id/updateStudent"
+        app:layout_constraintStart_toStartOf="@+id/updateStudent"
+        app:layout_constraintTop_toBottomOf="@+id/updateStudent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerStudent"
+        android:layout_width="0dp"
+        android:layout_height="424dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/couYearStudent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

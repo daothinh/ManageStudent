@@ -1,24 +1,30 @@
 package com.example.managestudent.model;
 
 public class Student {
-    private String name;
     private int idStudent;
+    private String name;
+    private String dob;
     private String address;
     private int courseYear;
 
-    public Student(String name, int idStudent, String address, int courseYear) {
-        this.name = name;
+    public Student(int idStudent, String name, String dob, String address, int courseYear) {
         this.idStudent = idStudent;
+        this.name = name;
+        this.dob = dob;
         this.address = address;
         this.courseYear = courseYear;
+    }
+
+    public int getIdStudent() {
+        return idStudent;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getIdStudent() {
-        return idStudent;
+    public String getDob() {
+        return dob;
     }
 
     public String getAddress() {
@@ -29,12 +35,16 @@ public class Student {
         return courseYear;
     }
 
+    public void setIdStudent(int idStudent) {
+        this.idStudent = idStudent;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setIdStudent(int idStudent) {
-        this.idStudent = idStudent;
+    public void setDob(String dob) {
+        this.dob = dob;
     }
 
     public void setAddress(String address) {
